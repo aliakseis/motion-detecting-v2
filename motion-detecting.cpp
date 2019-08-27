@@ -288,7 +288,7 @@ int main(int argc, char** argv)
     Mat curGray, prevGray, flowImageGray, frame;
     string windowName = "Optical Flow";
     namedWindow(windowName, 1);
-    //float scalingFactor = 0.75;
+    float scalingFactor = 0.75;
 
     // Iterate until the user presses the Esc key
     while (true)
@@ -300,7 +300,7 @@ int main(int argc, char** argv)
             break;
 
         // Resize the frame
-        //resize(frame, frame, Size(), scalingFactor, scalingFactor, INTER_AREA);
+        resize(frame, frame, Size(), scalingFactor, scalingFactor, INTER_AREA);
 
         // Convert to grayscale
         cvtColor(frame, curGray, COLOR_BGR2GRAY);
